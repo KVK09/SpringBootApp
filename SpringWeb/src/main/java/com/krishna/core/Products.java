@@ -1,6 +1,9 @@
 package com.krishna.core;
 
+import jakarta.persistence.Id;
+
 public class Products {
+	@Id
 	private int id;
 	private String name;
 	private String description;
