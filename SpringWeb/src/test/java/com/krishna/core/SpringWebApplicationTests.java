@@ -18,5 +18,12 @@ class SpringWebApplicationTests {
 		assertNotNull(product);
 		assertEquals("Iphone",product.getName());
 	}
+	@Test
+	void testupdateProducts() {
+		RestTemplate template = new RestTemplate();
+		Products product = template.getForObject("http://localhost:8080/productapi/products/1", Products.class);
+		product.setPrice(1400);
+		template.put("http://localhost:8080/productapi/products/", product);
+	}
 
 }
